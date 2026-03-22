@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  id                String  @id
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              user    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Account_userId_fkey")
+
+  @@unique([provider, providerAccountId], map: "Account_provider_providerAccountId_key")
+  @@index([userId], map: "Account_userId_fkey")
+}
+
+model address {
+  id      String @id
+  type    String
+  address String
+  userId  String
+  user    user   @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Address_userId_fkey")
+
+  @@index([userId], map: "Address_userId_fkey")
+}
+
+model menuitem {
+  id            Int         @id @default(autoincrement())
+  nameEn        String
+  nameAr        String
+  descriptionEn String      @db.Text
+  descriptionAr String      @db.Text
+  price         Float
+  image         String
+  category      String
+  isVeg         Boolean     @default(false)
+  isBestseller  Boolean     @default(false)
+  isSpicy       Boolean     @default(false)
+  badge         String?
+  rating        Float?      @default(0)
+  reviews       Int         @default(0)
+  orderitem     orderitem[]
+}
+
+model order {
+  id                                 String      @id
+  status                             String      @default("PENDING")
+  subtotal                           Float
+  deliveryFee                        Float
+  total                              Float
+  paymentMethod                      String
+  paymentStatus                      String      @default("PENDING")
+  deliveryAddress                    String
+  createdAt                          DateTime    @default(now())
+  deliveredAt                        DateTime?
+  rating                             Int?
+  userId                             String
+  deliveryPartnerId                  String?
+  user_order_deliveryPartnerIdTouser user?       @relation("order_deliveryPartnerIdTouser", fields: [deliveryPartnerId], references: [id], map: "Order_deliveryPartnerId_fkey")
+  user_order_userIdTouser            user        @relation("order_userIdTouser", fields: [userId], references: [id], map: "Order_userId_fkey")
+  orderitem                          orderitem[]
+
+  @@index([deliveryPartnerId], map: "Order_deliveryPartnerId_fkey")
+  @@index([userId], map: "Order_userId_fkey")
+}
+
+model orderitem {
+  id         String   @id
+  orderId    String
+  menuItemId Int
+  price      Float
+  quantity   Int
+  menuitem   menuitem @relation(fields: [menuItemId], references: [id], map: "OrderItem_menuItemId_fkey")
+  order      order    @relation(fields: [orderId], references: [id], onDelete: Cascade, map: "OrderItem_orderId_fkey")
+
+  @@index([menuItemId], map: "OrderItem_menuItemId_fkey")
+  @@index([orderId], map: "OrderItem_orderId_fkey")
+}
+
+model session {
+  id           String   @id
+  sessionToken String   @unique(map: "Session_sessionToken_key")
+  userId       String
+  expires      DateTime
+  user         user     @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Session_userId_fkey")
+
+  @@index([userId], map: "Session_userId_fkey")
+}
+
+model user {
+  id                                  String    @id
+  name                                String?
+  email                               String?   @unique(map: "User_email_key")
+  emailVerified                       DateTime?
+  image                               String?
+  hashedPassword                      String?
+  role                                user_role @default(USER)
+  phone                               String?
+  status                              String    @default("ACTIVE")
+  vehicle                             String?
+  rating                              Float?
+  isOnline                            Boolean   @default(false)
+  createdAt                           DateTime  @default(now())
+  account                             account[]
+  address                             address[]
+  order_order_deliveryPartnerIdTouser order[]   @relation("order_deliveryPartnerIdTouser")
+  order_order_userIdTouser            order[]   @relation("order_userIdTouser")
+  session                             session[]
+}
+
+model verificationtoken {
+  identifier String
+  token      String   @unique(map: "VerificationToken_token_key")
+  expires    DateTime
+
+  @@unique([identifier, token], map: "VerificationToken_identifier_token_key")
+}
+
+enum user_role {
+  USER
+  ADMIN
+  DELIVERY_PARTNER
+}

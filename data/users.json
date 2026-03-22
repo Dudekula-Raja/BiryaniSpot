@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Admin User",
+    "email": "admin@zomabir.com",
+    "password": "password123",
+    "role": "ADMIN",
+    "phone": "+971501234567",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "name": "John Customer",
+    "email": "user@example.com",
+    "password": "password123",
+    "role": "USER",
+    "phone": "+971551234567",
+    "createdAt": "2024-02-15T00:00:00.000Z",
+    "status": "ACTIVE",
+    "addresses": [
+      {
+        "id": 1,
+        "type": "Home",
+        "address": "Apartment 15B, Marina Towers, Dubai"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ahmed Rider",
+    "email": "rider@zomabir.com",
+    "password": "password123",
+    "role": "DELIVERY_PARTNER",
+    "phone": "+971561234567",
+    "createdAt": "2024-03-01T00:00:00.000Z",
+    "status": "ACTIVE",
+    "vehicle": "Motorcycle",
+    "rating": 4.8,
+    "totalDeliveries": 450,
+    "isOnline": false
+  }
+]

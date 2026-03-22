@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "track": "Track Order",
+    "cart": "Cart"
+  },
+  "hero": {
+    "badge": "🌟 Rated #1 Biryani Restaurant",
+    "title": "Biryani Spot",
+    "restaurant": "Restaurant",
+    "subtitle": "Authentic Flavours, Royal Experience",
+    "description": "Experience the finest Hyderabadi biryani and kebabs, crafted with aromatic spices and time-honoured recipes. Order now and taste the difference.",
+    "orderNow": "Order Now",
+    "viewMenu": "View Menu",
+    "stats": {
+      "dishes": "50+ Dishes",
+      "dishesLabel": "On Menu",
+      "rating": "4.9★",
+      "ratingLabel": "Rating",
+      "delivery": "30 Min",
+      "deliveryLabel": "Delivery",
+      "customers": "50K+",
+      "customersLabel": "Happy Customers"
+    }
+  },
+  "search": {
+    "placeholder": "Search for biryani, kebabs, curries...",
+    "button": "Search"
+  },
+  "categories": {
+    "title": "Explore Categories",
+    "subtitle": "From aromatic biryanis to sweet desserts — we have it all"
+  },
+  "featured": {
+    "title": "Bestsellers",
+    "subtitle": "Our most-loved dishes, prepared fresh every day",
+    "badge": "Bestseller"
+  },
+  "offers": {
+    "title": "Exclusive Offers",
+    "subtitle": "Great food at unbeatable prices",
+    "grab": "Grab Now"
+  },
+  "reviews": {
+    "title": "What Our Customers Say",
+    "subtitle": "Real reviews from real food lovers"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Explore our full range of authentic dishes",
+    "all": "All",
+    "addToCart": "Add",
+    "veg": "Veg",
+    "nonVeg": "Non-Veg",
+    "spicy": "🌶 Spicy",
+    "reviews": "reviews",
+    "filterAll": "All Items",
+    "filterVeg": "Veg Only"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Add some delicious items from our menu",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "free": "Free",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "items": "items",
+    "remove": "Remove"
+  },
+  "track": {
+    "title": "Track Your Order",
+    "subtitle": "Your order is on its way!",
+    "orderId": "Order ID",
+    "steps": {
+      "placed": "Order Placed",
+      "placedDesc": "We received your order",
+      "confirmed": "Confirmed",
+      "confirmedDesc": "Restaurant confirmed your order",
+      "preparing": "Preparing",
+      "preparingDesc": "Chef is cooking your food",
+      "delivery": "Out for Delivery",
+      "deliveryDesc": "Your rider is on the way",
+      "delivered": "Delivered",
+      "deliveredDesc": "Enjoy your meal!"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "story": "Our Story",
+    "storyText": "Biryani Spot Restaurant was founded in 2010 with a simple mission: to bring authentic Hyderabadi flavours to every table. What started as a small family kitchen has grown into a beloved restaurant trusted by over 50,000 customers.",
+    "mission": "Our Mission",
+    "missionText": "We source the finest spices from across the subcontinent, use time-honoured recipes passed down through generations, and prepare every dish with passion and care.",
+    "hours": "Opening Hours",
+    "hoursTime": "Every day: 11:00 AM – 11:00 PM",
+    "contact": "Contact Us",
+    "phone": "+1 (555) 246-8100",
+    "email": "hello@biryanispotrest.com",
+    "address": "123 Spice Lane, Food District, NY 10001"
+  },
+  "footer": {
+    "tagline": "Authentic Biryani. Royal Experience.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "© 2024 Biryani Spot Restaurant. All rights reserved.",
+    "madeWith": "Made with ❤️ for biryani lovers"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage Menu Items",
+    "add": "Add New Item",
+    "edit": "Edit Item",
+    "delete": "Delete",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "nameEn": "Name (English)",
+    "nameAr": "Name (Arabic)",
+    "descEn": "Description (English)",
+    "descAr": "Description (Arabic)",
+    "price": "Price ($)",
+    "image": "Image URL",
+    "category": "Category",
+    "veg": "Vegetarian",
+    "bestseller": "Bestseller",
+    "spicy": "Spicy",
+    "badge": "Custom Badge"
+  },
+  "language": "عربي",
+  "viewAll": "View All"
+}
